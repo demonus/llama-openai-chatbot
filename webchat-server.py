@@ -3,11 +3,11 @@ from llama_index import StorageContext, \
     load_index_from_storage
 
 
-def chatbot(input_text):
+def query(input_text):
     return index.as_query_engine().query(input_text)
 
 
-iface = gr.Interface(fn=chatbot,
+iface = gr.Interface(fn=query,
                      inputs=gr.components.Textbox(lines=7, label="Enter your text"),
                      outputs="text",
                      title="Custom-trained AI Chatbot")
