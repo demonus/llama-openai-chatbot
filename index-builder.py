@@ -2,7 +2,7 @@ from langchain.chat_models import ChatOpenAI
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, LLMPredictor, PromptHelper, ServiceContext
 
 
-def build_index(directory_path):
+def construct_index(directory_path):
     max_input_size = 4096
     num_outputs = 512
     max_chunk_overlap = 20
@@ -24,5 +24,5 @@ def build_index(directory_path):
 
 
 print("Building index...")
-build_index("docs")
+construct_index("docs")
 print("Index is built")
